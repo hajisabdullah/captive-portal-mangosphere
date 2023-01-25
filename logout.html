@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Coconnet | Logout</title>
+    <link rel="icon" type="image/x-icon" href="img/hotspot.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script language="JavaScript">
+        <!--
+        $(if advert-pending == 'yes')
+        var popup = '';
+
+        function focusAdvert() {
+            if (window.focus) popup.focus();
+        }
+
+        function openAdvert() {
+            popup = open('$(link-advert)', 'hotspot_advert', '');
+            setTimeout("focusAdvert()", 1000);
+        }
+        $(endif)
+
+        function openLogout() {
+            if (window.name != 'hotspot_status') return true;
+            open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+            window.close();
+            return false;
+        }
+
+        function byte_nice(bytes = 0) {
+            var s = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB'];
+            if(bytes == 0){
+                return 0+" "+s[0];
+            }
+            var e = Math.floor(Math.log(bytes)/Math.log(1024));
+            return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+        }
+
+        function bit_nice(bytes = 0) {
+            var s = ['bit', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb'];
+            if(bytes == 0){
+                return 0+" "+s[0];
+            }
+            var e = Math.floor(Math.log(bytes)/Math.log(1024));
+            return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+        }
+
+        function secondsToTime(e){
+            const h = Math.floor(e / 3600).toString().padStart(2,'0'),
+                  m = Math.floor(e % 3600 / 60).toString().padStart(2,'0'),
+                  s = Math.floor(e % 60).toString().padStart(2,'0');
+
+            return h + ':' + m + ':' + s;
+            //return `${h}:${m}:${s}`;
+        }
+        //-->
+    </script>
+</head>
+
+<body class="body-status" role="document">
+    <script language="JavaScript">
+        <!--
+        function openLogin() {
+            if (window.name != 'hotspot_logout') return true;
+            open('$(link-login)', '_blank', '');
+            window.close();
+            return false;
+        }
+        //-->
+    </script>
+
+    <div id="pageCoconnet" class="Coconnet">
+        <a href="https://www.coconnet.co.id/"><img src="img/coconnet.png" alt="Logo Coconnet" style="width: 150px;"></a>
+    </div>
+    <div id="pageTelkomsat" class="Telkomsat">
+        <a href="https://www.telkomsat.co.id/"><img src="img/tsat.png" alt="Logo Telkomsat" style="width: 150px;"></a>
+    </div>
+
+    <div id="pageStatus" class="Status">
+
+        <div class="status-caption">
+            $(if login-by == 'trial')
+            <br> Selamat Tinggal pengguna trial! <br> $(elif login-by != 'mac')
+            <br> Selamat Tinggal $(username)! <br> $(endif)
+        </div>
+
+        <div class="logout-form form">
+            <div class="form-caption">Status Koneksi Anda</div>
+
+            <table class="status-table">
+                <tbody>
+                    <tr>
+                        <td align="right">Alamat IP :</td>
+                        <td>$(ip)</td>
+                    </tr>
+                    <tr>
+                        <td align="right">Download / Upload :</td>
+                        <td><script>
+                        document.write(byte_nice($(bytes-out)) + ' / ' + byte_nice($(bytes-in)));
+                        </script></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Durasi Sesi :</td>
+                        <td><script>
+                        document.write(secondsToTime($(uptime-secs)));
+                        </script></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Sisa Waktu :</td>
+                        <td><script>
+                        document.write(secondsToTime($(session-time-left-secs)));
+                        </script></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                <input type="submit" value="Kembali ke halaman Login" class="buttonLogout">
+            </form>
+            <p>Dibuat oleh <a href="https://www.telkomsat.co.id/">Telkomsat</a></p>
+        </div>
+
+    </div>
+
+    <footer id="pageFooter" class="Footer">
+        <section class="footer-header">
+            <div class="footer-caption">Hubungi Kami :</div>
+            <div class="footer-logo">
+                <a href="https://www.coconnet.co.id/"><img src="img/coconnet.png" alt="Logo Coconnet" style="width: 150px;"></a>
+            </div>
+        </section>
+        <section class="footer-row">
+            <div class="footer-col">
+                <div class="footer-subcaption">Pusat Panggilan</div>
+                <div>
+                    <ul class="footer-ul">
+                        <li><a href="#">1500832</a></li>
+                    </ul>
+                    <ul class="footer-ul">
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-subcaption">Layanan SMS</div>
+                <div>
+                    <ul class="footer-ul">
+                        <li><a href="#">0811-1666-727</a></li>
+                        <li><a href="#">0812-2220-9977</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-subcaption">WhatsApp</div>
+                <div>
+                    <ul class="footer-ul">
+                        <li><a href="#">0811-974-9971 (Sales)</a></li>
+                        <li><a href="#">0811-9699-869 (Care Center)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-subcaption">Email</div>
+                <div>
+                    <ul class="footer-ul">
+                        <li><a href="#">sales@telkomsat.co.id</a></li>
+                    </ul>
+                    <ul class="footer-ul">
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="copyright">Copyright &copy 2022 &nbsp <a href="https://www.telkomsat.co.id/">PT Telkom Satelit Indonesia</a></div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery-1.12.2.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="/js/jquery-1.12.2.min.js"><\/script>')
+    </script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
