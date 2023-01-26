@@ -1,468 +1,477 @@
 .body-login {
-    display: grid;
-    grid-template-areas: "coconnet telkomsat" "login hero" "footer footer";
-    grid-template-rows: 100px 2fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
+  display: grid;
+  grid-template-areas: "coconnet telkomsat" "login hero" "footer footer";
+  grid-template-rows: 100px 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
 }
 
 .body-status {
-    display: grid;
-    grid-template-areas: "coconnet telkomsat" "status status" "footer footer";
-    grid-template-rows: 100px 2fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
+  display: grid;
+  grid-template-areas: "coconnet telkomsat" "status status" "footer footer";
+  grid-template-rows: 100px 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
 }
 
 div,
 footer {
-    display: grid;
+  display: grid;
 }
 
 #pageCoconnet {
-    grid-area: coconnet;
-    background: white;
+  grid-area: coconnet;
+  background: white;
 }
 
 #pageTelkomsat {
-    grid-area: telkomsat;
-    background-image: linear-gradient(to bottom left, #8DC73F, white, white);
+  grid-area: telkomsat;
+  background-image: linear-gradient(to bottom left, #FFB209, white, white);
 }
 
 #pageLogin {
-    grid-area: login;
-    background-image: linear-gradient(200deg, white 60%, white, #8DC73F);
+  grid-area: login;
+  background-image: linear-gradient(200deg, white 60%, white, #FFB209);
 }
 
 #pageStatus {
-    grid-area: status;
-    background-image: linear-gradient(190deg, white 70%, white, #8DC73F);
+  grid-area: status;
+  background-image: linear-gradient(190deg, white 70%, white, #FFB209);
 }
 
 #pageHero {
-    grid-area: hero;
-    background: white;
-    /*background-image: linear-gradient(160deg, white 60%, white, #8DC73F);*/
+  grid-area: hero;
+  background: white;
+  /*background-image: linear-gradient(160deg, white 60%, white, #8DC73F);*/
 }
 
 #pageFooter {
-    grid-area: footer;
-    background-color: #24262b;
+  grid-area: footer;
+  background-color: #24262b;
 }
 
 
 /* ==============( All )=============== */
 
 p {
-    text-align: center;
-    font-family: Arial;
-    color: gray;
-    display: block;
-    margin: 15px auto;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 12px;
+  text-align: center;
+  font-family: Arial;
+  color: gray;
+  display: block;
+  margin: 15px auto;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 12px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 
 /* ==============( Logo )=============== */
 
 .Coconnet {
-	display: flex;
-    justify-content: left;
-    padding: 20px 50px;
+  display: flex;
+  justify-content: left;
+  padding: 20px 50px;
 }
 
 .Telkomsat {
-    justify-content: right;
-    padding: 20px 50px;
+  justify-content: right;
+  padding: 20px 50px;
 }
 
 
 /* ==============( Login )=============== */
 
 .Login {
-    justify-content: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 80px;
-    padding-right: 20px;
-    font-family: 'Poppins', sans-serif;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 80px;
+  padding-right: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .login-caption {
-    font-size: 45px;
-    font-weight: bolder;
-    padding-bottom: 10px;
-    background: linear-gradient(#8DC73F, green);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: rgba(0, 0, 0, 0.2);
+  font-size: 45px;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  /* background: linear-gradient(#8DC73F, green); */
+  background: linear-gradient(#FFB209, #FB541F);
+  /*#FFF708 #FFB209  */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .login-subcaption {
-    font-size: 18px;
-    font-style: italic;
-    padding-bottom: 10px;
-    color: #8DC73F;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  /* color: #8DC73F; */
+  /* color: #FB541F; */
+  background: linear-gradient(#FFB209, #FB541F);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .login-form {
-    width: 350px;
-    height: 300px;
-    background: white;
-    box-shadow: 4px 4px 10px green;
-    margin: 0px auto;
-    padding: 20px 20px;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
+  width: 350px;
+  height: 300px;
+  background: white;
+  box-shadow: 4px 4px 10px #FB541F;
+  margin: 0px auto;
+  padding: 20px 20px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
 }
 
 .input-login {
-    display: block;
-    width: 259px;
-    height: 35px;
-    margin: 20px auto;
-    background: #fff;
-    border: 0px;
-    padding: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 16px;
-    border: 2px solid #fff;
-    transition: all 0.3s ease;
-    border-radius: 30px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    box-shadow: 2px 2px 4px green;
+  display: block;
+  width: 259px;
+  height: 35px;
+  margin: 20px auto;
+  background: #fff;
+  border: 0px;
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  box-shadow: 2px 2px 4px #FB541F;
 }
 
 .submit-login {
-    display: block;
-    background-image: linear-gradient(#8DC73F, green);
-    box-shadow: 2px 2px 4px black;
-    width: 316px;
-    padding: 12px;
-    cursor: pointer;
-    color: #fff;
-    border: 0px;
-    margin: 25px auto;
-    border-radius: 30px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    font-size: 17px;
-    transition: all 0.3s ease;
+  display: block;
+  background-image: linear-gradient(#FFB209, #FB541F);
+  box-shadow: 2px 2px 4px black;
+  width: 316px;
+  padding: 12px;
+  cursor: pointer;
+  color: #fff;
+  border: 0px;
+  margin: 25px auto;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  font-size: 17px;
+  transition: all 0.3s ease;
 }
 
 .submit-login:hover {
-    background: #8DC73F;
+  background: #FFB209;
 }
 
 .button-refresh {
-    display: flex;
-	float; left;
-    background-image: linear-gradient(#8DC73F, green);
-    box-shadow: 2px 2px 4px black;
-    width: 100px;
-    padding: 3px;
-    cursor: pointer;
-    color: #fff;
-	border: 0px;
-    border-radius: 3px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    font-size: 14px;
-    transition: all 0.3s ease;
+  display: flex;
+  float;
+  left;
+  background-image: linear-gradient(#FFB209, #FB541F);
+  box-shadow: 2px 2px 4px black;
+  width: 100px;
+  padding: 3px;
+  cursor: pointer;
+  color: #fff;
+  border: 0px;
+  border-radius: 3px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
 .button-refresh:hover {
-    background: #8DC73F;
+  background: #FFB209;
 }
 
 .button-alogin {
-    display: block;
-    background-image: linear-gradient(#8DC73F, green);
-    box-shadow: 2px 2px 4px black;
-    width: 290px;
-    padding: 6px;
-    cursor: pointer;
-    color: #fff;
-    border: 0px;
-    margin: 5px auto;
-    border-radius: 3px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    font-size: 16px;
-    transition: all 0.3s ease;
+  display: block;
+  background-image: linear-gradient(#FFB209, #FB541F);
+  box-shadow: 2px 2px 4px black;
+  width: 290px;
+  padding: 6px;
+  cursor: pointer;
+  color: #fff;
+  border: 0px;
+  margin: 5px auto;
+  border-radius: 3px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .button-alogin:hover {
-    background: #8DC73F;
+  background: #FFB209;
 }
 
 .powered {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 .form p a {
-    color: gray;
+  color: gray;
 }
 
 .form p a:hover {
-    color: #1ab822;
+  color: #1ab822;
 }
 
 
 /* ===========( Table Status )=========== */
 
 .Status {
-    justify-content: center;
-    padding-top: 0px;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-family: 'Poppins', sans-serif;
+  justify-content: center;
+  padding-top: 0px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .status-caption {
-    font-size: 35px;
-    font-weight: bolder;
-    padding-bottom: 10px;
-    background: linear-gradient(#8DC73F, green);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: rgba(0, 0, 0, 0.2);
+  font-size: 35px;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  background: linear-gradient(#FFB209, #FB541F);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .status-subcaption {
-    font-size: 18px;
-    font-style: italic;
-    padding-bottom: 10px;
-    color: #8DC73F;
+  font-size: 18px;
+  font-style: italic;
+  padding-bottom: 10px;
+  color: #FFB209;
 }
 
 .status-form {
-    width: 400px;
-    height: 330px;
-    background: white;
-    box-shadow: 4px 4px 10px green;
-    margin: 0px auto;
-    padding-top: 15px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
+  width: 400px;
+  height: 330px;
+  background: white;
+  box-shadow: 4px 4px 10px #FB541F;
+  margin: 0px auto;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
 }
 
 .logout-form {
-    width: 400px;
-    height: 345px;
-    background: white;
-    box-shadow: 4px 4px 10px green;
-    margin: 0px auto;
-    padding-top: 15px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
+  width: 400px;
+  height: 345px;
+  background: white;
+  box-shadow: 4px 4px 10px #FB541F;
+  margin: 0px auto;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
 }
 
 .form-caption {
-    display: flex;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    background: linear-gradient(#8DC73F, green);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  background: linear-gradient(#FFB209, #FB541F);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .remaining {
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 5px;
 }
 
 .status-table td {
-    padding: 5px 5px;
-    border: 1px solid green;
+  padding: 5px 5px;
+  border: 1px solid #FB541F;
 }
 
 table {
-    margin: 10px 0px;
+  margin: 10px 0px;
 }
 
 .param-name {
-    text-align: right;
+  text-align: right;
 }
 
 .buttonStatus {
-    display: block;
-    box-shadow: 2px 2px 4px black;
-    width: 316px;
-    padding: 12px;
-    cursor: pointer;
-    color: #fff;
-	background-image: linear-gradient(180deg, red, #880000);
-    border: 0px;
-    margin: 15px auto;
-    border-radius: 30px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    font-size: 17px;
-    transition: all 0.3s ease;
+  display: block;
+  box-shadow: 2px 2px 4px black;
+  width: 316px;
+  padding: 12px;
+  cursor: pointer;
+  color: #fff;
+  background-image: linear-gradient(180deg, red, #880000);
+  border: 0px;
+  margin: 15px auto;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  font-size: 17px;
+  transition: all 0.3s ease;
 }
 
 .buttonStatus:hover {
-    background: #8DC73F;
+  background: #FFB209;
 }
 
 .buttonLogout {
-    display: block;
-    box-shadow: 2px 2px 4px black;
-    width: 316px;
-    padding: 12px;
-    cursor: pointer;
-    color: #fff;
-	background-image: linear-gradient(#8DC73F, green);
-    border: 0px;
-    margin: 15px auto;
-    border-radius: 30px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    font-size: 17px;
-    transition: all 0.3s ease;
+  display: block;
+  box-shadow: 2px 2px 4px black;
+  width: 316px;
+  padding: 12px;
+  cursor: pointer;
+  color: #fff;
+  background-image: linear-gradient(#FFB209, #FB541F);
+  border: 0px;
+  margin: 15px auto;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  font-size: 17px;
+  transition: all 0.3s ease;
 }
 
 .buttonLogout:hover {
-    background: #8DC73F;
+  background: #FFB209;
 }
 
 
 /* ==============( Hero )=============== */
 
 .Hero {
-    justify-content: center;
-    padding-top: 100px;
-    padding-bottom: 40px;
-    padding-right: 80px;
-    padding-left: 20px;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  padding-right: 80px;
+  padding-left: 20px;
 }
 
 
 /* ==============( Footer )=============== */
 
 .Footer {
-    background-color: #24262b;
-    font-family: 'Poppins', sans-serif;
-    background-image: linear-gradient(black, green, #8DC73F);
+  background-color: #24262b;
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(#FB541F, #FFB209, #FFB209);
 }
 
 .footer-row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer-col {
-    flex-grow: 1;
-    width: 300px;
-    padding: 0px 0px;
-    float: left;
+  flex-grow: 1;
+  width: 300px;
+  padding: 0px 0px;
+  float: left;
 }
 
 .footer-header {
-    display: flex;
+  display: flex;
 }
 
 .footer-caption {
-    float: left;
-    width: 55%;
-    font-size: 20px;
-    padding: 20px 40px;
-    color: white;
+  float: left;
+  width: 55%;
+  font-size: 20px;
+  padding: 20px 40px;
+  color: black;
 }
 
 .footer-logo {
-    display: flex;
-    float: right;
-    width: 45%;
-    justify-content: right;
-    padding: 10px 20px;
+  display: flex;
+  float: right;
+  width: 45%;
+  justify-content: right;
+  padding: 10px 20px;
 }
 
 .footer-subcaption {
-    justify-content: left;
-    padding: 0 40px;
-    font-size: 18px;
-    color: greenyellow;
+  justify-content: left;
+  padding: 0 40px;
+  font-size: 18px;
+  color: black;
 }
 
 .footer-ul {
-    list-style: none;
-    font-size: 16px;
+  list-style: none;
+  font-size: 16px;
 }
 
 .footer-ul li {
-    margin-left: 0px;
-    padding-bottom: 5px;
-    text-decoration: none;
+  margin-left: 0px;
+  padding-bottom: 5px;
+  text-decoration: none;
 }
 
 .footer-ul li a {
-    color: white;
+  color: black;
 }
 
 .footer-ul li a:hover {
-    color: greenyellow;
+  color: white;
 }
 
 .copyright {
-    color: white;
-    display: flex;
-    font-size: 12px;
-    justify-content: center;
-    padding: 10px 0px;
-    background-image: linear-gradient(#8DC73F, green, black);
+  color: black;
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  padding: 10px 0px;
+  background-image: linear-gradient(#FFB209, #FB541F, #FB541F);
 }
 
 .copyright a {
-    color: white;
+  color: black;
 }
 
 .copyright a:hover {
-    color: greenyellow;
+  color: white;
 }
 
 
 /* ========( Footer Responsive )======== */
 
 @media(max-width: 1075px) {
-    .footer-col {
-        width: 47%;
-        float: left;
-        margin-bottom: 30px;
-    }
+  .footer-col {
+    width: 47%;
+    float: left;
+    margin-bottom: 30px;
+  }
 }
 
 @media(max-width: 775px) {
-    .footer-col {
-        width: 100%;
-    }
+  .footer-col {
+    width: 100%;
+  }
 }
 
 
@@ -472,56 +481,56 @@ table {
 /* Stack the layout on small devices/viewports. */
 
 @media all and (max-width: 925px) {
-    .body-login {
-        grid-template-areas: "coconnet telkomsat" "login login" "hero hero" "footer footer";
-        grid-template-rows: 100px 2fr 2fr 1fr;
-        grid-template-columns: 2fr 2fr;
-    }
-    .body-status {
-        grid-template-areas: "coconnet telkomsat" "status status" "footer footer";
-        grid-template-rows: 100px 2fr 2fr 1fr;
-        grid-template-columns: 2fr 2fr;
-    }
-    .Coconnet {
-        justify-content: left;
-        padding: 20px 30px;
-    }
-    .Telkomsat {
-        justify-content: right;
-        padding: 20px 30px;
-    }
-    .Login {
-        justify-content: center;
-        padding-top: 0px;
-        padding-bottom: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .Status {
-        justify-content: center;
-        padding: 40px 20px;
-    }
-    .Hero {
-        justify-content: center;
-        padding-top: 0px;
-        padding-bottom: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+  .body-login {
+    grid-template-areas: "coconnet telkomsat" "login login" "hero hero" "footer footer";
+    grid-template-rows: 100px 2fr 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
+  }
+  .body-status {
+    grid-template-areas: "coconnet telkomsat" "status status" "footer footer";
+    grid-template-rows: 100px 2fr 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
+  }
+  .Coconnet {
+    justify-content: left;
+    padding: 20px 30px;
+  }
+  .Telkomsat {
+    justify-content: right;
+    padding: 20px 30px;
+  }
+  .Login {
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .Status {
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .Hero {
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 @media all and (max-width: 500px) {
-    .body-login {
-        grid-template-areas: "coconnet telkomsat" "login login" "hero hero" "footer footer";
-        grid-template-rows: 100px 2fr 2fr 1fr;
-        grid-template-columns: 2fr 2fr;
-    }
-    .body-status {
-        grid-template-areas: "coconnet telkomsat" "status status" "footer footer";
-        grid-template-rows: 80px 2fr 2fr 1fr;
-        grid-template-columns: 2fr 2fr;
-    }
-    /*.Coconnet {
+  .body-login {
+    grid-template-areas: "coconnet telkomsat" "login login" "hero hero" "footer footer";
+    grid-template-rows: 100px 2fr 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
+  }
+  .body-status {
+    grid-template-areas: "coconnet telkomsat" "status status" "footer footer";
+    grid-template-rows: 80px 2fr 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
+  }
+  /*.Coconnet {
         justify-content: left;
         padding: 20px 20px;
 		border: solid 1px red;
@@ -532,51 +541,46 @@ table {
         padding: 20px 20px;
 		border: solid 1px red;
     }*/
-    .Login {
-        justify-content: center;
-        padding-top: 0px;
-        padding-bottom: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .Status {
-        justify-content: center;
-        padding: 40px 20px;
-    }
-	
-	.status-caption {
+  .Login {
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .Status {
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .status-caption {
     font-size: 30px;
-	}
-	
-	.status-form {
+  }
+  .status-form {
     width: 345px;
-	height: 325px;
-	}
-	
-	.logout-form {
-    width: 345px; /*345px*/
+    height: 325px;
+  }
+  .logout-form {
+    width: 345px;
+    /*345px*/
     height: 340px;
-	}
-	
-	.status-table {
+  }
+  .status-table {
     font-size: 14px;
-	}
-	
-	.remaining {
+  }
+  .remaining {
     font-size: 14px;
-	}
-
-	#pageLogin {
-	background: none;
-	}
-	#pageHero {
-    background-image: linear-gradient(200deg, white 60%, white, #8DC73F);
-	}
-    .Hero {
-        justify-content: center;
-        padding-top: 0px;
-        padding-bottom: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+  }
+  #pageLogin {
+    background: none;
+  }
+  #pageHero {
+    background-image: linear-gradient(200deg, white 60%, white, #FFB209);
+  }
+  .Hero {
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
