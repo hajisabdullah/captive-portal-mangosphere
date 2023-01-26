@@ -2,181 +2,183 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Coconnet | Login</title>
-    <link rel="icon" type="image/x-icon" href="img/hotspot.png">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Coconnet | Login</title>
+  <link rel="icon" type="image/x-icon" href="img/hotspot.png">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="body-login" role="document">
-    <!-- ======( Mikrotik )===== -->
-    $(if chap-id)
-    <form name="sendin" action="$(link-login-only)" method="post">
-        <input type="hidden" name="username" />
-        <input type="hidden" name="password" />
-        <input type="hidden" name="dst" value="$(link-orig)" />
-        <input type="hidden" name="popup" value="true" />
+  <!-- ======( Mikrotik )===== -->
+  $(if chap-id)
+  <form name="sendin" action="$(link-login-only)" method="post">
+    <input type="hidden" name="username" />
+    <input type="hidden" name="password" />
+    <input type="hidden" name="dst" value="$(link-orig)" />
+    <input type="hidden" name="popup" value="true" />
+  </form>
+
+  <script type="text/javascript" src="/md5.js"></script>
+  $(endif)
+  <script type="text/javascript">
+    <!--
+    function doLogin() {
+      var username = document.login.username.value;
+      var password = document.login.password.value;
+      if (password == '') {
+        password = username
+      }
+      $(
+        if chap - id)
+      document.sendin.username.value = username;
+      document.sendin.password.value = hexMD5('$(chap-id)' + password + '$(chap-challenge)');
+      document.sendin.submit();
+      return false;
+      $(
+        else)
+      document.login.password.value = password;
+      return true;
+      $(endif)
+    }
+    //-->
+  </script>
+  <script type="text/javascript">
+    <!--
+    var error_msg = '$(error)';
+    if (matched = error_msg.match(/Sorry... you have used all your data allowance/)) {
+      error_msg = 'Maaf kuota Anda sudah habis';
+    } else if (matched = error_msg.match(/Sorry... you have used your (.*?) data allowance/)) {
+      // error_msg = 'Maaf Anda sudah menghabiskan kuota ' + matched[1];
+      error_msg = 'Maaf kuota Anda sudah habis';
+    } else if (matched = error_msg.match(/Maximum usage exceeded/)) {
+      error_msg = 'Maaf waktu Anda sudah habis';
+    } else if (matched = error_msg.match(/Maximum (.*?) usage exceeded/)) {
+      error_msg = 'Maaf waktu Anda sudah habis';
+    } else if (matched = error_msg.match(/The time for voucher (.*?) is depleted/)) {
+      error_msg = 'Maaf waktu Anda sudah habis';
+    } else if (matched = error_msg.match(/You are already logged in/)) {
+      error_msg = 'Anda sudah login';
+    } else if (matched = error_msg.match(/Account disabled/)) {
+      error_msg = 'Voucher dinonaktifkan';
+    } else if (matched = error_msg.match(/Unknown user/)) {
+      error_msg = 'Voucher tidak diketahui';
+    } else if (matched = error_msg.match(/Simultaneous connections limited to (\d+)/)) {
+      error_msg = 'Voucher hanya bisa digunakan di ' + matched[1] + ' perangkat dalam waktu bersamaan';
+    } else if (matched = error_msg.match(/User (.*?) not registered/)) {
+      error_msg = 'Voucher tidak terdaftar';
+    }
+    //-->
+  </script>
+  <!-- ======( Mikrotik )===== -->
+
+  <div id="pageCoconnet" class="Coconnet">
+    <a href="https://www.mangosphere.telkomsat.co.id/"><img src="img/mangosphere.png" alt="Logo Mangosphere" style="width: 80px;"></a>
+  </div>
+  <div id="pageTelkomsat" class="Telkomsat">
+    <a href="https://www.telkomsat.co.id/"><img src="img/tsat.png" alt="Logo Telkomsat" style="width: 200px;"></a>
+  </div>
+
+  $(if trial == 'yes')
+  <div class="alert alert-success">
+    Free Trial Available - in order to try service click big green button <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="btn btn-success">Free Trial</a>
+  </div>
+  $(endif)
+
+  <div id="pageLogin" class="Login">
+    <div class="login-caption">Space Platform</div>
+    <div class="login-subcaption">Bersama Komunitas, Tumbuh Bersama</div>
+    <form name="login" class="login-form form" action="$(link-login-only)" method="post" onSubmit="return doLogin()">
+      <div class="form-caption">Login</div>
+      <script>
+        if (error_msg) {
+          document.write('<div class="alert alert-danger">' + error_msg + '</div>');
+        }
+      </script>
+      <input type="hidden" name="dst" value="$(link-orig)" />
+      <input type="hidden" name="popup" value="true" />
+
+      <label for="username"></label>
+      <input type="text" class="input-login" name="username" placeholder="Kode Voucher" aria-describedby="username-field" value="$(username)">
+      <input type="hidden" class="input-login" name="password" placeholder="Password" aria-describedby="basic-addon1">
+      <input type="submit" class="submit-login" value="Login">
+
+      <p class="powered">Dibuat oleh <a href="https://www.telkomsat.co.id/">Telkomsat</a></p>
     </form>
+  </div>
 
-    <script type="text/javascript" src="/md5.js"></script>
-    $(endif)
-    <script type="text/javascript">
-        <!--
-        function doLogin() {
-            var username = document.login.username.value;
-            var password = document.login.password.value;
-            if(password == ''){
-                password = username
-            }
-            $(if chap-id)
-            document.sendin.username.value = username;
-            document.sendin.password.value = hexMD5('$(chap-id)' + password + '$(chap-challenge)');
-            document.sendin.submit();
-            return false;
-            $(else)
-            document.login.password.value = password;
-            return true;
-            $(endif)
-        }
-        //-->
-    </script>
-    <script type="text/javascript">
-        <!--
-        var error_msg = '$(error)';
-        if(matched = error_msg.match(/Sorry... you have used all your data allowance/)){
-            error_msg = 'Maaf kuota Anda sudah habis';
-        }else if(matched = error_msg.match(/Sorry... you have used your (.*?) data allowance/)){
-            // error_msg = 'Maaf Anda sudah menghabiskan kuota ' + matched[1];
-            error_msg = 'Maaf kuota Anda sudah habis';
-        }else if(matched = error_msg.match(/Maximum usage exceeded/)){
-            error_msg = 'Maaf waktu Anda sudah habis';
-        }else if(matched = error_msg.match(/Maximum (.*?) usage exceeded/)){
-            error_msg = 'Maaf waktu Anda sudah habis';
-        }else if(matched = error_msg.match(/The time for voucher (.*?) is depleted/)){
-            error_msg = 'Maaf waktu Anda sudah habis';
-        }else if(matched = error_msg.match(/You are already logged in/)){
-            error_msg = 'Anda sudah login';
-        }else if(matched = error_msg.match(/Account disabled/)){
-            error_msg = 'Voucher dinonaktifkan';
-        }else if(matched = error_msg.match(/Unknown user/)){
-            error_msg = 'Voucher tidak diketahui';
-        }else if(matched = error_msg.match(/Simultaneous connections limited to (\d+)/)){
-            error_msg = 'Voucher hanya bisa digunakan di ' + matched[1] + ' perangkat dalam waktu bersamaan';
-        }else if(matched = error_msg.match(/User (.*?) not registered/)){
-            error_msg = 'Voucher tidak terdaftar';
-        }
-        //-->
-    </script>
-    <!-- ======( Mikrotik )===== -->
+  <div id="pageHero" class="Hero">
+    <img src="img/hero.png" alt="Hero" style="width: 100%; max-width: 400px;">
+  </div>
 
-    <div id="pageCoconnet" class="Coconnet">
-        <a href="https://www.coconnet.co.id/"><img src="img/coconnet.png" alt="Logo Coconnet" style="width: 200px;"></a>
-    </div>
-    <div id="pageTelkomsat" class="Telkomsat">
-        <a href="https://www.telkomsat.co.id/"><img src="img/tsat.png" alt="Logo Telkomsat" style="width: 200px;"></a>
-    </div>
+  <footer id="pageFooter" class="Footer">
+    <section class="footer-header">
+      <div class="footer-caption">Hubungi Kami :</div>
+      <div class="footer-logo">
+        <a href="https://www.mangosphere.telkomsat.co.id/"><img src="img/mangosphere.png" alt="Logo Mangosphere" style="width: 80px;"></a>
+      </div>
+    </section>
+    <section class="footer-row">
+      <div class="footer-col">
+        <div class="footer-subcaption">Pusat Panggilan</div>
+        <div>
+          <ul class="footer-ul">
+            <li><a href="#">1500832</a></li>
+          </ul>
+          <ul class="footer-ul">
+            <li>
+              <a href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-subcaption">Layanan SMS</div>
+        <div>
+          <ul class="footer-ul">
+            <li><a href="#">0811-1666-727</a></li>
+            <li><a href="#">0812-2220-9977</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-subcaption">WhatsApp</div>
+        <div>
+          <ul class="footer-ul">
+            <li><a href="#">0811-974-9971 (Sales)</a></li>
+            <li><a href="#">0811-9699-869 (Care Center)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-subcaption">Email</div>
+        <div>
+          <ul class="footer-ul">
+            <li><a href="#">sales@telkomsat.co.id</a></li>
+          </ul>
+          <ul class="footer-ul">
+            <li>
+              <a href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="copyright">Copyright &copy 2022 &nbsp <a href="https://www.telkomsat.co.id/">PT Telkom Satelit Indonesia</a></div>
+  </footer>
 
-    $(if trial == 'yes')
-    <div class="alert alert-success">
-        Free Trial Available - in order to try service click big green button <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="btn btn-success">Free Trial</a>
-    </div>
-    $(endif)
-
-    <div id="pageLogin" class="Login">
-        <div class="login-caption">Space Platform</div>
-        <div class="login-subcaption">Bersama Komunitas, Tumbuh Bersama</div>
-        <form name="login" class="login-form form" action="$(link-login-only)" method="post" onSubmit="return doLogin()">
-            <div class="form-caption">Login</div>
-            <script>
-            if(error_msg){
-                document.write('<div class="alert alert-danger">' + error_msg + '</div>');
-            }
-            </script>
-            <input type="hidden" name="dst" value="$(link-orig)" />
-            <input type="hidden" name="popup" value="true" />
-
-            <label for="username"></label>
-            <input type="text" class="input-login" name="username" placeholder="Kode Voucher" aria-describedby="username-field" value="$(username)">
-            <input type="hidden" class="input-login" name="password" placeholder="Password" aria-describedby="basic-addon1">
-            <input type="submit" class="submit-login" value="Login">
-
-            <p class="powered">Dibuat oleh <a href="https://www.telkomsat.co.id/">Telkomsat</a></p>
-        </form>
-    </div>
-
-    <div id="pageHero" class="Hero">
-        <img src="img/hero.png" alt="Hero" style="width: 100%; max-width: 400px;">
-    </div>
-
-    <footer id="pageFooter" class="Footer">
-        <section class="footer-header">
-            <div class="footer-caption">Hubungi Kami :</div>
-            <div class="footer-logo">
-                <a href="https://www.coconnet.co.id/"><img src="img/coconnet.png" alt="Logo Coconnet" style="width: 150px;"></a>
-            </div>
-        </section>
-        <section class="footer-row">
-            <div class="footer-col">
-                <div class="footer-subcaption">Pusat Panggilan</div>
-                <div>
-                    <ul class="footer-ul">
-                        <li><a href="#">1500832</a></li>
-                    </ul>
-                    <ul class="footer-ul">
-                        <li>
-                            <a href="#"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-col">
-                <div class="footer-subcaption">Layanan SMS</div>
-                <div>
-                    <ul class="footer-ul">
-                        <li><a href="#">0811-1666-727</a></li>
-                        <li><a href="#">0812-2220-9977</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-col">
-                <div class="footer-subcaption">WhatsApp</div>
-                <div>
-                    <ul class="footer-ul">
-                        <li><a href="#">0811-974-9971 (Sales)</a></li>
-                        <li><a href="#">0811-9699-869 (Care Center)</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-col">
-                <div class="footer-subcaption">Email</div>
-                <div>
-                    <ul class="footer-ul">
-                        <li><a href="#">sales@telkomsat.co.id</a></li>
-                    </ul>
-                    <ul class="footer-ul">
-                        <li>
-                            <a href="#"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <div class="copyright">Copyright &copy 2022 &nbsp <a href="https://www.telkomsat.co.id/">PT Telkom Satelit Indonesia</a></div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery-1.12.2.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="/js/jquery-1.12.2.min.js"><\/script>')
-    </script>
-    <script src="/js/bootstrap.min.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/js/jquery-1.12.2.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="/js/jquery-1.12.2.min.js"><\/script>')
+  </script>
+  <script src="/js/bootstrap.min.js"></script>
 </body>
 
 </html>
